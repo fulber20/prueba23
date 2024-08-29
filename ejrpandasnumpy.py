@@ -1,10 +1,10 @@
-import numpy as np
+import pandas as pd
 base={ 
     'Nombre': ['Juan','Ana','Luis','Marta'],
     'Edad':[15,14,16,15],
     'Nota':[8.5,9.0,7.5,8.0]
 }
-base=np.DataFrame(base)
+base=pd.DataFrame(base)
 print(" original")
 print(base)
 
