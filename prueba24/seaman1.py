@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np 
-#datos de la empresa
+#base de datos
 Date = {
     'Curso': [
         'SUPERVISOR DE TRABAJOS DE ALTO RIESGO',
@@ -11,9 +11,9 @@ Date = {
         'ELABORACION DE COSTOS Y PRESUPUESTOS DE OBRA',
         'PROGRAMACIÓN Y CONTROL DE OBRAS'
     ],
-    'DNI': [45592328, 45592328, 45592328, 45592328, 45089649, 45089649,  45089649],
+    'DNI': [55592328, 55592328, 55592328, 55592328, 55089649, 55089649,  55089649],
     'Nombres ': [
-        'NATHALY  CARPIO',
+        'NATALY  CARPIO',
         'NATHALY  CARPIO',
         'NATHALY  CARPIO',
         'NATHALY CARDENAS',
@@ -30,5 +30,5 @@ df = pd.DataFrame(Date)
 # Convertir las columnas de fecha a formato datetime
 df['F. Inicio'] = pd.to_datetime(df['F. Inicio'], format='%Y-%m-%d')
 df['F. Final'] = pd.to_datetime(df['F. Final'], format='%Y-%m-%d')
-
+#imprimir el dataframe
 print(df)
