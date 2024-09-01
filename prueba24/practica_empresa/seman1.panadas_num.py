@@ -1,8 +1,6 @@
-#operaciones con numpy y pandas con los datos emmp
 import pandas as pd
-import numpy as np
 
-
+# Datos originales con nombres ficticios
 data = {
     "Código": [
         "R4954-45592022", "R4955-45592022", "R4956-45592022", "R4957-45592022", 
@@ -15,42 +13,34 @@ data = {
         "R4982-76025711", "R4983-76025711"
     ],
     "Curso": [
-        "SUPERVISOR DE TRABAJOS DE ALTO RIESGO", "TRABAJOS EN CALIENTE", "TRABAJOS EN ALTURA", 
-        "TRABAJOS ELÉCTRICOS", "METRADOS EN EDIFICACIONES", "ELABORACION DE COSTOS Y PRESUPUESTOS DE OBRA", 
-        "PROGRAMACIÓN Y CONTROL DE OBRAS", "VALORIZACION Y LIQUIDACION DE OBRAS PÚBLICAS", 
-        "Seguridad, Salud Ocupacional y Medio Ambiente en Minería y Construcción", 
-        "GESTIÓN DE INVERSIÓN PÚBLICA INVIERTE.PE", "SUPERVISOR SSOMA", "GESTIÓN AMBIENTAL", 
-        "METRADOS EN EDIFICACIONES", "ELABORACION DE COSTOS Y PRESUPUESTOS DE OBRA", 
-        "PROGRAMACIÓN Y CONTROL DE OBRAS", "VALORIZACION Y LIQUIDACION DE OBRAS PÚBLICAS", 
-        "Seguridad, Salud Ocupacional y Medio Ambiente en Minería y Construcción", 
-        "METRADOS EN EDIFICACIONES", "Seguridad, Salud Ocupacional y Medio Ambiente en Minería y Construcción", 
-        "SUPERVISOR DE TRABAJOS DE ALTO RIESGO", "TRABAJOS EN CALIENTE", "TRABAJOS EN ALTURA", 
-        "TRABAJOS CON IZAJE DE CARGA", "METRADOS EN EDIFICACIONES", "ELABORACION DE COSTOS Y PRESUPUESTOS DE OBRA", 
-        "PROGRAMACIÓN Y CONTROL DE OBRAS", "VALORIZACION Y LIQUIDACION DE OBRAS PÚBLICAS", 
+        "SUPERVISOR DE TRABAJOS DE ALTO RIESGO", "TRABAJOS EN CALIENTE", "TRABAJOS EN ALTURA", "TRABAJOS ELÉCTRICOS", 
+        "METRADOS EN EDIFICACIONES", "ELABORACION DE COSTOS Y PRESUPUESTOS DE OBRA", "PROGRAMACIÓN Y CONTROL DE OBRAS", 
+        "VALORIZACION Y LIQUIDACION DE OBRAS PÚBLICAS", "Seguridad, Salud Ocupacional y Medio Ambiente en Minería y Construcción", 
+        "GESTIÓN DE INVERSIÓN PÚBLICA INVIERTE.PE", "SUPERVISOR SSOMA", "GESTIÓN AMBIENTAL", "METRADOS EN EDIFICACIONES", 
+        "ELABORACION DE COSTOS Y PRESUPUESTOS DE OBRA", "PROGRAMACIÓN Y CONTROL DE OBRAS", "VALORIZACION Y LIQUIDACION DE OBRAS PÚBLICAS", 
+        "Seguridad, Salud Ocupacional y Medio Ambiente en Minería y Construcción", "METRADOS EN EDIFICACIONES", 
+        "Seguridad, Salud Ocupacional y Medio Ambiente en Minería y Construcción", "SUPERVISOR DE TRABAJOS DE ALTO RIESGO", 
+        "TRABAJOS EN CALIENTE", "TRABAJOS EN ALTURA", "TRABAJOS CON IZAJE DE CARGA", "METRADOS EN EDIFICACIONES", 
+        "ELABORACION DE COSTOS Y PRESUPUESTOS DE OBRA", "PROGRAMACIÓN Y CONTROL DE OBRAS", "VALORIZACION Y LIQUIDACION DE OBRAS PÚBLICAS", 
         "MODELADO BIM REVIT ESTRUCTURAS", "METRADOS EN EDIFICACIONES", "ELABORACION DE COSTOS Y PRESUPUESTOS DE OBRA"
     ],
-    "DNI": [
-        "45592022", "45592022", "45592022", "45592022", "45099189", "45099189", 
-        "45099189", "45099189", "72230861", "41789538", "44093903", "44093903", 
-        "43108216", "43108216", "43108216", "43108216", "46793173", "71028470", 
-        "70893310", "77320378", "77320378", "77320378", "77320378", "42447315", 
-        "42447315", "42447315", "42447315", "42447315", "76025711", "76025711"
+    "IDNS": [
+        "4559202215", "4559202202", "4559202219", "4559202250", "6845099189", 
+        "4509918916", "45099189332", "4509918920", "7223086130", "4541789538", 
+        "4409390315", "4409390361", "4310821695", "4310821620", "7543108216", 
+        "4310821618", "4679317381", "7102847086", "7089331095", "4077320378", 
+        "7732037819", "7732037851", "7732037869", "4244731524", "8042447315", 
+        "4244731520", "4244731591", "4244731545", "7602571156", "5776025711"
     ],
     "Nombres_Apellidos": [
-        "NATHALY MILAGROS CARDENAS CARPIO", "NATHALY MILAGROS CARDENAS CARPIO", 
-        "NATHALY MILAGROS CARDENAS CARPIO", "NATHALY MILAGROS CARDENAS CARPIO", 
-        "JOSE EDUARDO HINOSTROZA ARAUJO", "JOSE EDUARDO HINOSTROZA ARAUJO", 
-        "JOSE EDUARDO HINOSTROZA ARAUJO", "JOSE EDUARDO HINOSTROZA ARAUJO", 
-        "ZEGARRA QUIÑONES MARIA CRISTINA", "CESAR RICARDO ROSADO ROLDAN", 
-        "OSCAR RAMOS PALLI", "OSCAR RAMOS PALLI", "WASHINGTON MACEDO CHALLCO", 
-        "WASHINGTON MACEDO CHALLCO", "WASHINGTON MACEDO CHALLCO", 
-        "WASHINGTON MACEDO CHALLCO", "GABRIEL NELSON ARAGON VILCAS", 
-        "ADRIANA JAZMIN MIRANDA MARTINEZ", "JORGE LUIS TUYA ZAMBRANO", 
-        "FREDY CONOVILCA OSORES", "FREDY CONOVILCA OSORES", "FREDY CONOVILCA OSORES", 
-        "FREDY CONOVILCA OSORES", "ING. EDSON HERIBERTO QUISPE ROJAS", 
-        "ING. EDSON HERIBERTO QUISPE ROJAS", "ING. EDSON HERIBERTO QUISPE ROJAS", 
-        "ING. EDSON HERIBERTO QUISPE ROJAS", "ING. EDSON HERIBERTO QUISPE ROJAS", 
-        "ALANYA CAMARENA CLIDER YOVANY", "ALANYA CAMARENA CLIDER YOVANY"
+        "Laura Rodríguez Pérez", "Carlos Martínez Gómez", "Ana Silva Torres", "Pedro López Vargas", 
+        "Luis Fernández Álvarez", "Marta Gómez Fernández", "Jorge Ramírez Morales", "Claudia Martínez López", 
+        "Sofia Torres Rodríguez", "David González Castro", "Héctor Morales Ruiz", "Beatriz Fernández Díaz", 
+        "Ricardo Pérez Jiménez", "Laura Díaz Márquez", "Luis Alejandro Rodríguez", "Camila Gómez Sánchez", 
+        "Antonio Ruiz Martínez", "Laura García Martínez", "Jorge Fernández López", "Alejandra Morales Gómez", 
+        "Mónica Castillo Ruiz", "Andrés Fernández López", "Ricardo López Vargas", "José Martínez Rodríguez", 
+        "Juan Pablo Gómez", "Ana María Vargas", "Valeria Castro Romero", "Camilo Mendoza Martínez", 
+        "Gabriela López Sánchez", "Laura Muñoz Castillo"
     ],
     "F. Inicio": [
         "9/11/2023", "7/02/2024", "2/03/2024", "5/04/2024", "5/09/2023", 
@@ -72,21 +62,21 @@ data = {
 
 df = pd.DataFrame(data)
 
-
+# Convertir las columnas de fechas a datetime
 df['F. Inicio'] = pd.to_datetime(df['F. Inicio'], dayfirst=True)
 df['F. Final'] = pd.to_datetime(df['F. Final'], dayfirst=True)
 
-# Calcular la duración de cada curso en días y horas
-df['Duración (días)'] = (df['F. Final'] - df['F. Inicio']).dt.dys
+# Calcular la duración en días y horas
+df['Duración (días)'] = (df['F. Final'] - df['F. Inicio']).dt.days
 df['Duración (horas)'] = df['Duración (días)'] * 24
 
+# Contar el número total de clientes
+total_clientes = df['IDNS'].nunique()
 
-total_clientes = df['DNI'].nuniqgroupby()
+# Contar cuántos cursos ha tomado cada cliente
+cursos_por_cliente = df.groupby('Nombres_Apellidos').size().reset_index(name='Número de Cursos')
 
-
-cursos_por_cliente = df.groupby('Nombres_Apellidos').size().resest(name='Número de Cursos')
-
-
+# Mostrar resultados
 print(f"Cantidad total de clientes: {total_clientes}")
 print("\nNúmero de cursos por cliente:")
 print(cursos_por_cliente)
