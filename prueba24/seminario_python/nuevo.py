@@ -1,6 +1,5 @@
 import numpy as np
 
-# Crear un array de 1D
 array1d = np.array([1, 2, 3, 4, 5])
 print("Array 1D:")
 print(array1d)
