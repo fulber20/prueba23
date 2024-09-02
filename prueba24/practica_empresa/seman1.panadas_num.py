@@ -1,5 +1,5 @@
 import pandas as pd
-
+import numpy as np
 # Datos originales con nombres ficticios
 data = {
     "Código": [
