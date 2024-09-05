@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comercio Electrónico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        .login-form, .recommendations {
+            margin-bottom: 20px;
+        }
+        .recommendations ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .recommendations li {
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Iniciar Sesión</h1>
+        <div class="login-form">
+            <input type="number" id="userId" placeholder="Ingrese su ID de usuario" />
+            <button onclick="getRecommendations()">Obtener Recomendaciones</button>
+        </div>
+        <div class="recommendations">
+            <h2>Recomendaciones</h2>
+            <ul id="recommendationsList"></ul>
+        </div>
+    </div>
+
+    <script>
+        async function getRecommendations() {
+            const userId = document.getElementById('userId').value;
+            const response = await fetch(`http://localhost:5000/recommendations/${userId}`);
+            const data = await response.json();
+            
+            const recommendationsList = document.getElementById('recommendationsList');
+            recommendationsList.innerHTML = '';  // Limpiar la lista existente
+            
+            data.recommended_products.forEach(productId => {
+                const li = document.createElement('li');
+                li.textContent = `Producto ID: ${productId}`;
+                recommendationsList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
