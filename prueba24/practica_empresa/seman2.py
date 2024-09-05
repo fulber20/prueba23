@@ -1,12 +1,9 @@
 #importar librerias
 import pandas as pd
 import numpy as np
-from sklearn.linear_model 
-import LinearRegression
-from sklearn.model_selection 
-import train_test_split
-from sklearn.metrics 
-import mean_squared_error
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
 
 # Datos de ejemplo
 data = {
@@ -40,4 +37,4 @@ print(f'Error Cuadrático Medio (MSE): {mse:.2f}')
 # Ejemplo de predicción: Estimar el costo para un programa de 60 horas, 30 participantes y complejidad alta (3)
 new_data = np.array([[60, 30, 3]])
 predicted_cost = model.predict(new_data)
-print(f'Predicción del costo para un programa de capacitación de 60 horas, 30 participantes y complejidad alta: S/.{predicted_cost[0]:,.2f}')
+print(f'Predicción del costo para un programa de capacitación de 60 horas, 30 participantes y complejidad alta: S.{predicted_cost[0]:,.2f}')
