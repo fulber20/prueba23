@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #F0F0F0;
+        color: #333;
+    }
+
+    header {
+        background-color: #000000;
+        color: #fff;
+        padding: 20px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid #003366;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 26px;
+        text-align: center;
+        flex: 1;
+        color: #fff;
+        font-weight: 700;
+    }
+
+    header img {
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        margin-right: 20px;
+        object-fit: cover;
+    }
+    .search-bar {
+        flex: 2;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .search-bar input {
+        width: 100%;
+        max-width: 800px; /* Ajusta este valor según el diseño deseado */
+        padding: 12px 20px;
+        border: none;
+        border-radius: 30px;
+        outline: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-size: 20px;
+        background-color: #fff;
+    }
+
+    .search-bar::before {
+        content: '🔍';
+        position: absolute;
+        right: 15px;
+        color: #004d99;
+        font-size: 24px; /* Aumentado para un mejor contraste */
+    }
+
+    .cart-icon {
+        font-size: 32px;
+        color: #fff;
+        margin-left: 25px;
+        text-decoration: none;
+    }
+
+    .cart-icon:hover {
+        color: #e9ecef;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        margin: 40px 0 20px;
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .product-list, .recommended-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .product {
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        background: #fff;
+        width: 320px;
+        text-align: center;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        padding: 20px;
+    }
+
+    .product:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .product img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+    }
+
+    .product h3 {
+        margin: 15px 0 10px;
+        font-size: 24px;
+        color: #333;
+    }
+
+    .product p {
+        margin: 5px 0;
+        font-size: 16px;
+        color: #555;
+    }
+
+    .product button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 30px;
+        padding: 12px 24px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 10px 0;
+        transition: background-color 0.3s, transform 0.3s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .product button:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
+    }
+
+    .product .add-to-cart {
+        background-color: #28a745;
+    }
+
+    .product .add-to-cart:hover {
+        background-color: #218838;
+    }
+
+    .recommended-section {
+        background-color: #F0F0F0);
+        padding: 30px;
+        margin: 30px 0;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .recommended-section h2 {
+        margin-bottom: 20px;
+        font-size: 28px;
+        color: #004d99;
+    }
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f4f7f9, #e1e9f2);
+            color: #333;
+        }
+    
+        header {
+            background: linear-gradient(90deg, #003366, #004d99);
+            color: #fff;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #002244;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+    
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            text-align: center;
+            flex: 1;
+            color: #fff;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+    
+        header img {
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+            margin-right: 20px;
+            object-fit: cover;
+            border: 3px solid #fff;
+        }
+    
+        .search-bar {
+            flex: 2;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+    
+        .search-bar input {
+            width: 100%;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px;
+            outline: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            background-color: #fff;
+        }
+    
+        .search-bar::before {
+            content: '🔍';
+            position: absolute;
+            right: 15px;
+            color: #004d99;
+            font-size: 20px;
+        }
+    
+        .cart-icon {
+            font-size: 32px;
+            color: #fff;
+            margin-left: 25px;
+            text-decoration: none;
+        }
+    
+        .cart-icon:hover {
+            color: #e9ecef;
+        }
+    
+        h2 {
+            text-align: center;
+            color: #333;
+            margin: 40px 0 20px;
+            font-size: 32px;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+    
+        .product-list, .recommended-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px;
+        }
+    
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            background: #fff;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+            padding: 20px;
+        }
+    
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+    
+        .product h3 {
+            margin: 15px 0 10px;
+            font-size: 24px;
+            color: #333;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+        }
+    
+        .product p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #555;
+        }
+    
+        .product button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+    
+        .product button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+    
+        .product .add-to-cart {
+            background-color: #28a745;
+        }
+    
+        .product .add-to-cart:hover {
+            background-color: #218838;
+        }
+    
+        .recommended-section {
+            background: linear-gradient(135deg, #ffffff, #f4f7f9);
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+    
+        .recommended-section h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #004d99;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='OIG4.jpeg') }}" alt="Logo"><br>
+        <h1>Bienvenido a tu pagina de confianza </h1>
+        <div class="search-bar">
+            <form action="{{ url_for('search') }}" method="GET">
+                <input type="text" name="query" placeholder="Buscar productos...">
+            </form>
+        </div>
+        <a href="{{ url_for('cart') }}" class="cart-icon">
+            🛒
+        </a>
+    </header>
+  
+
+    <h2 style="text-align: center;">Productos Disponibles</h2>
+    <div class="product-list">
+        {% for product in products %}
+        <div class="product">
+            {% if product.image %}
+            <img src="data:image/jpeg;base64,{{ product.image }}" alt="{{ product.name }}">
+            {% endif %}
+            <h3>{{ product.name }}</h3>
+            <p><strong>Descripción:</strong> {{ product.description }}</p>
+            <p><strong>Precio:</strong> S/:{{ product.price }}</p>
+            <form action="{{ url_for('add_to_cart') }}" method="POST">
+                <input type="hidden" name="product_id" value="{{ product.id }}">
+                <button class="add-to-cart" type="submit">Agregar al Carrito</button>
+            </form>
+            <form action="{{ url_for('buy_now') }}" method="POST">
+                <input type="hidden" name="product_id" value="{{ product.id }}">
+                <button class="buy-now" type="submit">Comprar Ahora</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Sección de Productos Recomendados -->
+    <div class="recommended-section">
+        <h2>Productos Recomendados</h2>
+        <div class="recommended-list">
+            {% for recommended_product in recommended_products %}
+            <div class="product">
+                {% if recommended_product.image %}
+                <img src="data:image/jpeg;base64,{{ recommended_product.image }}" alt="{{ recommended_product.name }}">
+                {% endif %}
+                <h3>{{ recommended_product.name }}</h3>
+                <p><strong>Descripción:</strong> {{ recommended_product.description }}</p>
+                <p><strong>Precio:</strong> S/:{{ recommended_product.price }}</p>
+                <form action="{{ url_for('add_to_cart') }}" method="POST">
+                    <input type="hidden" name="product_id" value="{{ recommended_product.id }}">
+                    <button class="add-to-cart" type="submit">Agregar al Carrito</button>
+                </form>
+                <form action="{{ url_for('buy_now') }}" method="POST">
+                    <input type="hidden" name="product_id" value="{{ recommended_product.id }}">
+                    <button class="buy-now" type="submit">Comprar Ahora</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
