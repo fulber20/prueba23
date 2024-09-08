@@ -1,0 +1,6 @@
+id,fecha,producto,cantidad,precio_unitario,total
+1,2024-01-01,Producto A,5,10.0,50.0
+2,2024-01-02,Producto B,2,15.0,30.0
+3,2024-01-03,Producto C,10,7.5,75.0
+4,2024-01-04,Producto A,3,10.0,30.0
+5,2024-01-05,Producto D,1,25.0,25.0

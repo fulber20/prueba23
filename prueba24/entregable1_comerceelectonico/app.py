@@ -1,25 +1,24 @@
-from flask import Flask, render_template
+from flask import Flask, request, jsonify, render_template
+import pandas as pd
 
 app = Flask(__name__)
 
-# Datos de ejemplo
-products = [
-    {"id": 1, "name": "Camiseta", "price": 20.0, "description": "Camiseta de algodón", "image": "camiseta.jpg"},
-    {"id": 2, "name": "Pantalones", "price": 35.0, "description": "Pantalones de mezclilla", "image": "pantalones.jpg"},
-    {"id": 3, "name": "Zapatos", "price": 50.0, "description": "Zapatos de cuero", "image": "zapatos.jpg"},
-]
+# Cargar datos
+ventas = pd.read_csv('historial_ventas.csv')
 
 @app.route('/')
 def index():
-    return render_template('index.html', products=products)
+    return render_template('index.html')
 
-@app.route('/product/<int:product_id>')
-def product(product_id):
-    product = next((p for p in products if p['id'] == product_id), None)
-    if product:
-        return render_template('product.html', product=product)
-    else:
-        return "Producto no encontrado", 404
+@app.route('/recommendations', methods=['GET'])
+def get_recommendations():
+    user_id = request.args.get('user-id')
+    # Ejemplo simple de recomendación
+    recommendations = {
+        "user_id": user_id,
+        "recommended_products": ["Producto A", "Producto B", "Producto C"]
+    }
+    return jsonify(recommendations)
 
 if __name__ == '__main__':
     app.run(debug=True)
