@@ -1,0 +1,16 @@
+import matplotlib.pyplot as plt
+
+
+# Generamos datos aleatorios
+data = np.random.randn(5)
+
+# Creamos el histograma
+plt.hist(data, bins=30, edgecolor='black')
+
+# Añadimos título y etiquetas
+plt.title('Histograma con Matplotlib')
+plt.xlabel('Valores')
+plt.ylabel('Frecuencia')
+
+# Mostramos el gráfico
+plt.show()

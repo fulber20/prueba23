@@ -198,12 +198,10 @@
         }
     
         header img {
-            height: 90px;
-            width: 90px;
-            border-radius: 50%;
-            margin-right: 20px;
-            object-fit: cover;
-            border: 3px solid #fff;
+            colo:#fff;
+            border-solid:2px;
+                max-height: 100px;
+                border-radius:50px;
         }
     
         .search-bar {
@@ -350,8 +348,9 @@
         <a href="{{ url_for('cart') }}" class="cart-icon">
             🛒
         </a>
+       
+        
     </header>
-  
 
     <h2 style="text-align: center;">Productos Disponibles</h2>
     <div class="product-list">
@@ -375,7 +374,6 @@
         {% endfor %}
     </div>
 
-    <!-- Sección de Productos Recomendados -->
     <div class="recommended-section">
         <h2>Productos Recomendados</h2>
         <div class="recommended-list">

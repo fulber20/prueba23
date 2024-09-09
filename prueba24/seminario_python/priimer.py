@@ -1,10 +1,28 @@
 import pandas as pd
+import mysql.connector  # O el conector que estés utilizando (sqlite3, psycopg2, etc.)
 
-# Usar pd.read_excel para leer un archivo Excel
-datos = pd.read_excel('C:/Users/FULBER/Documents/lavadero/producto.xlsx', header=None)
+# Función para obtener una conexión a la base de datos
+def get_db_connection():
+    return mysql.connector.connect(
+        host='localhost',
+        user='root',
+        password='',
+        database='ecommerce'
+    )
 
-# Guardar el DataFrame como un archivo CSV
-datos.to_csv('C:/Users/FULBER/Documents/lavadero/producto.csv', index=False)
+# Leer datos desde una base de datos SQL y guardarlos como un archivo CSV
+def export_data_to_csv():
+    conn = get_db_connection()
+    query = "SELECT * FROM products"  # Cambia 'your_table_name' por el nombre de la tabla que quieres leer
+    datos = pd.read_sql(query, conn)
+    
+    # Guardar el DataFrame como un archivo CSV
+    datos.to_csv('C:/Users/FULBER/Documents/lavadero/name.csv', index=False)
+    
+    # Imprimir las primeras filas del DataFrame
+    print(datos.head())
+    
+    conn.close()
 
-# Imprimir las primeras filas del DataFrame
-print(datos.head())
+# Ejecutar la función
+export_data_to_csv()
