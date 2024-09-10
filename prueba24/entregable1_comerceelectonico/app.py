@@ -195,7 +195,8 @@ def add_product():
 
     conn = get_db_connection()
     cursor = conn.cursor()
-    cursor.execute("INSERT INTO products (name, description, price, image) VALUES (%s, %s, %s, %s)", (name, description, price, image_blob))
+    cursor.execute("INSERT INTO products (name, description, price, image) VALUES (%s, %s, %s, %s)", 
+    (name, description, price, image_blob))
     conn.commit()
     conn.close()
     

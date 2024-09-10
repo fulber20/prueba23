@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
+import numpy as np
 import pandas as pd
 
 # Generamos datos aleatorios y los convertimos en un DataFrame

@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-
+import numpy as np
 
 # Generamos datos aleatorios
 data = np.random.randn(5)
